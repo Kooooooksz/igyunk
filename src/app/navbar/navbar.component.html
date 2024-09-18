@@ -1,0 +1,10 @@
+<a routerLink="/">Főoldal</a>
+<div class="menu">
+    <ul>
+        <li *ngIf="!isLoggedIn"><a routerLink="/login">Belépés</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="/" (click)="logout()">Kijelentkezés</a></li>
+        <li><a routerLink="/register">Regisztráció</a></li>
+        <li><a routerLink="/profile">Profil</a></li>
+        <li><a routerLink="/drinks">Italok</a></li>
+    </ul>
+</div>

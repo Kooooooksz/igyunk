@@ -1,0 +1,20 @@
+<div>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="uploadFile()">Feltöltés</button>
+  </div>
+  
+  <div *ngIf="downloadURL$ | async as downloadURL">
+    <p>Hangfájl URL: {{ downloadURL }}</p>
+    <audio controls>
+      <source [src]="downloadURL" type="audio/mpeg">
+      A böngésződ nem támogatja az audio lejátszást.
+    </audio>
+  </div>
+
+  <div *ngIf="downloadURL$ | async as downloadURL">
+    <audio controls>
+      <source [src]="downloadURL" type="audio/mpeg">
+      A böngésződ nem támogatja az audio lejátszást.
+    </audio>
+  </div>
+  

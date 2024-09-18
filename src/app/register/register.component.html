@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main_component">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div>
+                <span><label for="email">Email:</label><input type="text" formControlName="email"></span>
+            </div>
+            <div>
+                <span><label for="email">Password:</label><input type="password" formControlName="password"></span>
+            </div>
+            <div>
+                <span><label for="address">Address:</label><input type="text" formControlName="address"></span>
+            </div>
+            <div formGroupName="name">
+                <div>
+                    <span><label for="firstname">First name:</label><input type="text" formControlName="firstname"></span>
+                </div>
+                <div>
+                    <span><label for="lastname">Last name:</label><input type="text" formControlName="lastname"></span>
+                </div>
+                
+            </div>
+            <button>Register</button>
+        </form>
+    </div>
+</body>
+</html>

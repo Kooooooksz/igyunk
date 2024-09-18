@@ -1,0 +1,29 @@
+.menu ul {
+    list-style-type: none; /* Removes bullet points from list */
+    margin: 0;
+    padding: 0;
+    align-self: left;
+}
+
+.menu ul li {
+    display: inline-block; /* Places the list items next to each other */
+    margin-right: 20px; /* Adds spacing between the items */
+}
+
+.menu ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #000; /* Sets link color, customize as needed */
+    font-size: 16px; /* Adjust the font size as per requirement */
+}
+
+.menu ul li a:hover {
+    color: #007bff; /* Changes color on hover, customize as needed */
+}
+
+.menu{
+    text-align: right;
+}
+
+.homepage{
+    text-align: left;
+}

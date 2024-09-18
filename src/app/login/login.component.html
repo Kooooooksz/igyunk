@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main_component">
+        <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+            <div>
+                <span><label for="email">Email:</label><input type="text" formControlName="email"></span>
+            </div>
+            <div>
+                <span><label for="email">Password:</label><input type="password" formControlName="password"></span>
+            </div>
+            <button>Login</button>
+        </form>
+    </div>
+</body>
+</html>

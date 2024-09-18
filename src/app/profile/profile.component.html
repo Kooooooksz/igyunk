@@ -1,0 +1,20 @@
+<div>
+    <h3>Adataim</h3>
+    <div class="name">
+        <span>Teljes név: </span>{{userDatas[0].name.lastname}} {{userDatas[0].name.firstname}}
+    </div>
+    <div class="address">
+        <span>Cím: </span>{{userDatas[0].address}}
+    </div>
+    <div>
+        <span>E-mail cím: </span>{{userDatas[0].email}}
+    </div>
+    <div *ngIf="requests$ | async as requests">
+        <div class="requests">
+            <h3>Kik jelöltek be?</h3>
+            <div *ngFor="let request of requests">
+                <p>{{request.who}} <button (click)="accept(request)">Visszajelöl</button><button (click)="delete(request)">Töröl</button></p>
+            </div>
+        </div>
+    </div>
+</div>

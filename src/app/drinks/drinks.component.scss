@@ -1,0 +1,152 @@
+/* Alapvető stílusok */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Ital lista stílus */
+.drink-item {
+    margin-bottom: 20px;
+}
+
+.drink-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Kép és szöveg teteje egy vonalban */
+}
+
+.drink-details {
+    flex: 1; /* Szöveg helyigényének növelése */
+}
+
+.drink-info img {
+    max-width: 150px; /* Kép maximális szélessége */
+    height: auto; /* Megőrzi az arányokat */
+    margin-left: 20px; /* Kép és szöveg közötti margó */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Ital törlő gomb */
+.drinkbutton {
+    margin-top: 10px;
+}
+
+.drinkbutton button {
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.drinkbutton button:hover {
+    background-color: #ff3d3d;
+}
+
+/* Form stílus */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Reszponzív stílus kisebb képernyőkre */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .drink-info {
+        flex-direction: column; /* Kép és szöveg egymás alá kerül kisebb képernyőkön */
+    }
+
+    .drink-info img {
+        margin-left: 0; /* A margó megszüntetése kisebb képernyőn */
+        margin-top: 10px; /* Kép alulra kerül, így felülre kerül margó */
+    }
+
+    form input[type="text"],
+    form textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"],
+    .drinkbutton button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

@@ -1,0 +1,10 @@
+<div [ngClass]="currentStyle" class="greet">
+    <p>
+      Üdvözöllek az Igyunk weboldalon
+      <span *ngIf="isLoggedIn">, {{ userName }}</span>!<br>
+      Amennyiben téged is vonz az alkoholmámor, a lehető legjobb helyen jársz!
+    </p>
+  </div>
+  
+  <button (click)="toggleStyle()">Stílus váltása</button>
+  

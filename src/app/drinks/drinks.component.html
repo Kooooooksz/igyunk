@@ -1,0 +1,50 @@
+<div class="container" *ngIf="drinks$ | async as drinks">
+  <div *ngFor="let drink of drinks" class="drink-item">
+    <div class="drink-info">
+      <div class="drink-details">
+        <h3>{{drink.name | sigma}}</h3>
+        <div *ngIf="!editMode[drink.id]; else editTemplate">
+          <p>Category: {{ drink.category }}</p>
+          <p>Description: {{ drink.description }}</p>
+          <p>Created by: {{ drink.creator }} ({{userCFromChild}})</p>
+          <div *ngIf="userEmail === drink.creator || friendStatuses[drink.id]">
+            <!-- Szerkesztési mód aktiválása -->
+            <button (click)="editDrink(drink.id)">Szerkesztés</button>
+          </div>
+          <div *ngIf="userEmail !== drink.creator && !isRequestSent && friendStatuses[drink.id] === false">
+            <p>Még nem vagy {{drink.creator}} ivócimbije</p> 
+            <button (click)="sendRequest(drink)">Jelöld be</button>
+          </div>
+        </div>
+        <!-- Szerkesztési mód -->
+        <ng-template #editTemplate>
+          <div>
+            <label for="name-{{drink.id}}">Name:</label>
+            <input type="text" [(ngModel)]="drink.name" id="name-{{drink.id}}">
+          </div>
+          <div>
+            <label for="category-{{drink.id}}">Category:</label>
+            <input type="text" [(ngModel)]="drink.category" id="category-{{drink.id}}">
+          </div>
+          <div>
+            <label for="description-{{drink.id}}">Description:</label>
+            <textarea [(ngModel)]="drink.description" id="description-{{drink.id}}"></textarea>
+          </div>
+          <input type="file" (change)="onFileSelected($event, drink)" />
+          <button (click)="updateDrink(drink)">Mentés</button>
+          <button (click)="cancelEdit(drink.id)">Mégse</button>
+        </ng-template>
+      </div>
+      <!-- Ital képének megjelenítése -->
+      <img [src]="drink.imageUrl" alt="{{drink.name}}">
+    </div>
+    <div *ngIf="userEmail === drink.creator">
+      <div class="drinkbutton">
+        <!-- Ital törlése -->
+        <button (click)="deleteDrink(drink)">Ital törlése</button>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <add-drink [valtozo]="szulo_valtozo" (userCChange)="handlerUserChange($event)"></add-drink>
+</div>
